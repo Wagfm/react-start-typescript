@@ -8,7 +8,7 @@ import App from "./App";
 test("Must pass", async function () {
     const {container} = render(<App/>);
     expect(container).toBeTruthy();
-    const paragraph = container.querySelector("p");
+    const paragraph = container.querySelector("h1");
     expect(paragraph).toBeTruthy();
     expect(paragraph?.textContent).toEqual("Hello, World!");
 });
@@ -16,7 +16,7 @@ test("Must pass", async function () {
 test("Must fail to assure jest is working properly", async function () {
     const {container} = render(<App/>);
     expect(container).toBeTruthy();
-    const paragraph = container.querySelector("p");
+    const paragraph = container.querySelector("h1");
     expect(paragraph).toBeTruthy();
     expect(paragraph?.textContent).toEqual("Goodbye, World!");
 });
