@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js",
-    "test": "NODE_NO_WARNINGS=1 jest"
+    "test": "NODE_NO_WARNINGS=1 jest --watchAll"
   },
   "keywords": [],
   "author": "",
@@ -16,20 +16,20 @@
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9",
     "@babel/preset-typescript": "^7.26.0",
-    "@testing-library/react": "^16.0.1",
+    "@testing-library/react": "^16.1.0",
     "@types/jest": "^29.5.14",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
     "babel-jest": "^29.7.0",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "mini-css-extract-plugin": "^2.9.2",
-    "react-test-renderer": "^18.3.1",
     "style-loader": "^4.0.0",
     "ts-jest": "^29.2.5",
     "typescript": "^5.6.3",
@@ -39,8 +39,9 @@
     "webpack-merge": "^6.0.1"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "axios": "^1.7.9",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "jest": {
     "testEnvironment": "jsdom",
@@ -48,6 +49,9 @@
       "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "(/tests/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
     "moduleFileExtensions": [
       "tsx",
       "ts",
